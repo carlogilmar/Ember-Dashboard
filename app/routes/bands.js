@@ -22,6 +22,7 @@ export default Route.extend({
 			this.modelFor('bands').pushObject(band);
 			alert("Guardando Band");
 			this.get('controller').set('name', "");
+      this.transitionTo('bands.band.songs', band);
 		}
 	}
 

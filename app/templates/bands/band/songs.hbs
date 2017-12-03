@@ -4,6 +4,13 @@
     <button class="btn btn-primary btn-sm new-song-button" {{action "createSong"}}>Add</button>
   </li>
 
+  {{#if noSongs}}
+    <li class="list-group-item empty-list">
+      <div class="empty-message">
+        There are no songs yet. Why don't you <a href="#" {{action "enableSongCreation"}}>create one?</a>
+      </div>
+    </li>
+  {{/if}}
 
   {{#each model.songs as |song|}}
     <li class="list-group-item song">
