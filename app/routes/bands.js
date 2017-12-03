@@ -9,9 +9,11 @@ export default Route.extend({
     var yellowLedbetter= Song.create({ title:"Yellow Ledbetter", band:"Pearl Jam", rating:2});
     var pretender = Song.create({ title:"The Pretender", band:"Foo Fighters", rating:1});
     var daughter = Song.create({ title:"Daughter", band:"Pearl Jam", rating:3});
-    var ledZepellin = Band.create({ name: 'Led Zepellin1', songs:[blackDog]});
-    var pearlJam = Band.create({ name: 'Pearl Jam', songs:[yellowLedbetter, daughter]});
-    var fooFighters = Band.create({ name: 'Foo Fighters', songs:[pretender]});
+
+    var ledZepellin = Band.create({ name: 'Led Zepellin1', description:"This is the description", songs:[blackDog]});
+    var pearlJam = Band.create({ name: 'Pearl Jam', description:"This is the description", songs:[yellowLedbetter, daughter]});
+    var fooFighters = Band.create({ name: 'Foo Fighters', description:"This is the description", songs:[pretender]});
+
     return [ledZepellin, pearlJam, fooFighters]
   },
 
@@ -22,6 +24,7 @@ export default Route.extend({
 			this.modelFor('bands').pushObject(band);
 			alert("Guardando Band");
 			this.get('controller').set('name', "");
+      this.transitionTo('bands.band.songs', band);
 		}
 	}
 
