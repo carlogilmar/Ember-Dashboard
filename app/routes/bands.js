@@ -12,7 +12,7 @@ export default Route.extend({
 
     var ledZepellin = Band.create({ name: 'Led Zepellin1', description:"This is the description", songs:[blackDog]});
     var pearlJam = Band.create({ name: 'Pearl Jam', description:"This is the description", songs:[yellowLedbetter, daughter]});
-    var fooFighters = Band.create({ name: 'Foo Fighters', description:"This is the description", songs:[pretender]});
+    var fooFighters = Band.create({ name: 'Foo Fighters', songs:[pretender]});
 
     return [ledZepellin, pearlJam, fooFighters]
   },
