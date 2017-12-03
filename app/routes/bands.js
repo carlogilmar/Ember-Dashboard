@@ -13,7 +13,17 @@ export default Route.extend({
     var pearlJam = Band.create({ name: 'Pearl Jam', songs:[yellowLedbetter, daughter]});
     var fooFighters = Band.create({ name: 'Foo Fighters', songs:[pretender]});
     return [ledZepellin, pearlJam, fooFighters]
-  }
+  },
+
+	actions: {
+		createBand: function(){
+			var name = this.get('controller').get('name');
+			var band = Band.create({name: name});
+			this.modelFor('bands').pushObject(band);
+			alert("Guardando Band");
+			this.get('controller').set('name', "");
+		}
+	}
 
 
 });
