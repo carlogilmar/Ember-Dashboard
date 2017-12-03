@@ -3,6 +3,16 @@ import EmberObject from '@ember/object';
 
 var Band = EmberObject.extend({
   name:"",
+  language:"",
+
+  slug: function(){
+    return this.get('name').dasherize();
+  }.property('name'),
+
+  site:function(){
+    return 'http://bands.com/'+this.get('slug')+'.'+this.get('language');
+  }.property('slug', 'language')
+
 });
 
 var Song = EmberObject.extend({
