@@ -9,7 +9,7 @@
     <li class="list-group-item song">
       {{song.title}}
       <span class="rating pull-right">{{song.rating}}</span>
-			{{star-rating rating=song.rating item=song onClick="updateRating"}}
+			{{star-rating rating=song.rating item=song on-click=(action "updateRating")}}
     </li>
   {{/each}}
 </ul>
