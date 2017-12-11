@@ -21,3 +21,6 @@ A short introduction of this app could easily go here.
   > git push heroku master
 
   - Enjoy your deploy and be happy!
+
+
+  > See this application here: https://ember-dashboard.herokuapp.com/
